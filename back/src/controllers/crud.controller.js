@@ -1,4 +1,4 @@
-const db = require('../config/conexion_DB.js');
+const db = require('../config/conexion_DB');
 
 class crudcontroller{
  //obtener todos los registros de una tabla
@@ -32,7 +32,7 @@ class crudcontroller{
     async Actualizar(tabla, idcampo, id, data){
         try {
             const[resultado] = await db.query(`UPDATE ?? SET ? WHERE ?? = ?`,[tabla, data, idcampo, id]);
-            if(resultado.affeectedrows ===0){
+            if(resultado.affeectedrows === 0){
                 throw new Error('Registro no encontrado');
             }
             return await this.obtenerUno(tabla, idcampo, id);

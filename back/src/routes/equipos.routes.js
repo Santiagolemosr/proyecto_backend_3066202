@@ -45,7 +45,7 @@ router.put('/:id', async(req , res) => {
     }
 });
 
-router.delete('/', async(req , res) => {
+router.delete('/:id', async(req , res) => {
     try{
         const id =  req.params.id;
         const resultado = await crud.eliminar(tabla, idcampo,id);
