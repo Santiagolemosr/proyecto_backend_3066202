@@ -7,7 +7,7 @@ CREATE TABLE equipos(
 );
 
 -- INSERT = POST
-insert into equipos(nombre_equipo)
+insert into equipos (nombre_equipo)
 values
 ("Alemania"),
 ("Holanda"),

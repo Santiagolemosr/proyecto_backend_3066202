@@ -37,9 +37,9 @@ router.post('/', async(req , res) => {
 });
 
 router.put('/:id', async(req , res) => {
-    try{
-        const nuevoDato = await crud.Actualizar(tabla,  req.body);
-        res.status(201).json(nuevoDato);
+    try {
+        const datoActualizado = await crud.actualizar(tabla, idcampo, req.params.id, req.body);
+        res.json(datoActualizado);
     }catch (error) {
         res.status(500).json({error: error.message});
     }

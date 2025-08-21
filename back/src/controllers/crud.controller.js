@@ -29,10 +29,10 @@ class crudcontroller{
  }
     //actualizar un registro por id
 
-    async Actualizar(tabla, idcampo, id, data){
+    async actualizar(tabla, idcampo, id, data){
         try {
-            const[resultado] = await db.query(`UPDATE ?? SET ? WHERE ?? = ?`,[tabla, data, idcampo, id]);
-            if(resultado.affeectedrows === 0){
+            const [resultado] = await db.query(`UPDATE ?? SET ? WHERE ?? = ?`,[tabla, data, idcampo, id]);
+            if (resultado.affeectedrows === 0){
                 throw new Error('Registro no encontrado');
             }
             return await this.obtenerUno(tabla, idcampo, id);
